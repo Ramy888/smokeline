@@ -1,0 +1,33 @@
+# Lens Studio generated files (names taken from the .gitignore Lens Studio 5.24.1 ships)
+Cache/**
+PluginsUserPreferences/**
+Support/**
+BackUp/**
+Workspaces/**
+.vscode/**
+/jsconfig.json
+/tsconfig.json
+/spk_debug_key.pem
+*.lock
+
+# AI agent files and personal notes: local only, never pushed
+CLAUDE.md
+AGENTS.md
+.claude/
+.agents/
+agent/
+.codex/
+.cursor/
+.clad/
+skills-lock.json
+.DS_Store
+
+# BEGIN Lens Studio managed Agents-Docs block
+.mcp.json
+.cursor/mcp.json
+.vscode/mcp.json
+.codex/config.toml
+.claude/settings.local.json
+ls-live-instance.json
+ls-live-instance.json.tmp
+# END Lens Studio managed Agents-Docs block
