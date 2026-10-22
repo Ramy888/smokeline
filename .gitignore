@@ -54,3 +54,7 @@ ls-live-instance.json
 ls-live-instance.json.tmp
 Packages/AiPreviewAgentInspect.lspkg*
 .agents/
+
+# Added by Lens Studio (LEAF plugin)
+leaf_plugin_settings.json
+.virtual-scene.json
