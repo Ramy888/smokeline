@@ -202,6 +202,10 @@ export class SmokelineController extends BaseScriptComponent {
     const p = origin.add(dir.uniformScale(EXIT_RAY_DISTANCE))
     const pos = new vec3(p.x, FLOOR_Y + EXIT_CENTER_ABOVE_FLOOR, p.z) // stands upright on the floor
     const isFirst = this.exits.length === 0
+    if (!isFirst && Math.hypot(pos.x - this.exits[0].position.x, pos.z - this.exits[0].position.z) < EXIT_SIZE.x) {
+      log(`exit ignored: ${fmt(pos)} overlaps Door A`) // a second exit needs its own spot
+      return
+    }
     const obj = isFirst ? this.exitFrameA : this.exitFrameB
     const material = this.barMaterial(obj).clone()
     const exit: ExitRecord = {

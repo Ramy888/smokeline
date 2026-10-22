@@ -39,6 +39,10 @@ export class SmokelineFixPinchThroughFrameScenario extends Scenario {
     near(mp.y, FLOOR_Y, 0.01, "meeting y")
     expect(state().exits.length).toBe(1) // the frame hit neither blocked it nor became an exit
     expect(state().phase).toBe("marking")
+
+    // A level pinch at Door A's frame would put Window B 200 cm along the same ray, on top of Door A.
+    await hand.pinchToward(cam, cam.add(new vec3(0, 0, -200)), doorIt)
+    expect(state().exits.length).toBe(1)
     say("FIX PASS")
   }
 }
