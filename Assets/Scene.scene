@@ -37,6 +37,7 @@
   Components:
     - !<own> 00000000-0000-0065-0000-000000000065
     - !<own> e5553c8a-0b7e-4ef4-92d9-3e1318fb82c1
+    - !<own> 892dd9e7-f621-459c-b801-b11a56c6b350
 - !<Camera/00000000-0000-0065-0000-000000000065>
   PrefabRemaps:
     []
@@ -737,6 +738,21 @@
     - !<own> 3a794764-c758-4d72-9d89-bf3ed978113f
   Components:
     []
+- !<SceneObject/2773baef-a0ee-4d40-bdf5-76e13d56b54e>
+  PrefabRemaps:
+    []
+  Name: Debrief
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> dec06176-4b0f-49a7-9735-ed72db821baa
 - !<Skin/28e05826-1521-46fa-a54c-80f2957ec80c>
   PrefabRemaps:
     []
@@ -832,6 +848,8 @@
     - !<own> 44137993-f8a8-4829-a5a5-868a445fa61e
     - !<own> afb11004-2c9d-425b-8e07-2e36c1194250
     - !<own> 4fc6ffbf-99da-4c1c-89f3-c94e742d8120
+    - !<own> abf2ea39-8403-40ac-b47b-4b6e1375a32a
+    - !<own> 2773baef-a0ee-4d40-bdf5-76e13d56b54e
   Components:
     []
 - !<SceneObject/2dae2a27-8ce6-466a-8bff-622195c1b3a8>
@@ -1352,12 +1370,14 @@
   ScriptInputs:
     "":
       startUi: !<MappingBased.AssignableType_1> 4eece64e-3159-4607-b1cb-6340e0791396
+      debriefUi: !<MappingBased.AssignableType_2> dec06176-4b0f-49a7-9735-ed72db821baa
       exitFrameA: !<reference.SceneObject> acdd273a-13d4-4d4d-9ef8-e42b15fd4f0f
       exitFrameB: !<reference.SceneObject> cc04d640-df9a-4940-a467-600798b5f907
       meetingPoint: !<reference.SceneObject> 719d1a85-d659-40d0-93dc-21bd3c2586a3
       smokeLayer: !<reference.SceneObject> 4fc6ffbf-99da-4c1c-89f3-c94e742d8120
       alarm: !<reference.AudioComponent> 3c5d4b2c-ddf6-430f-b015-7e67c2f2fc65
       getLowCue: !<reference.AudioComponent> 5297e368-7ede-41f2-a18d-d51818ee1f8e
+      secondWayOut: !<reference.AudioComponent> 760b9ff3-169b-4428-872a-dc8e3d52431c
       cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
   ScriptTypes:
     "":
@@ -1753,6 +1773,23 @@
     - !<own> 241be3d8-6f45-47d7-8b71-53778e375dc2
   Components:
     []
+- !<AudioComponent/760b9ff3-169b-4428-872a-dc8e3d52431c>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> b18b3377-e983-4044-bb79-88a733d13ec7
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<SceneObject/77a79970-63f4-4c7c-984a-539d2ef0c92a>
   PrefabRemaps:
     []
@@ -1985,6 +2022,11 @@
     - !<own> 1fc7fa3e-6910-4741-b8a7-1b6660a39a9d
   Components:
     - !<own> 28e05826-1521-46fa-a54c-80f2957ec80c
+- !<AudioListenerComponent/892dd9e7-f621-459c-b801-b11a56c6b350>
+  PrefabRemaps:
+    []
+  Name: Audio Listener
+  Enabled: true
 - !<SceneObject/8b877074-7eee-4be1-b669-714f8d5a1da3>
   PrefabRemaps:
     []
@@ -2315,6 +2357,21 @@
     []
   Components:
     - !<own> 11c4bb09-7c38-4023-9802-74f9f28709a9
+- !<SceneObject/abf2ea39-8403-40ac-b47b-4b6e1375a32a>
+  PrefabRemaps:
+    []
+  Name: SecondWayOutCue
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 760b9ff3-169b-4428-872a-dc8e3d52431c
 - !<SceneObject/abfa4c71-3560-46f0-9471-90e212f21185>
   PrefabRemaps:
     []
@@ -3166,6 +3223,26 @@
     - !<own> d4a9c5e3-fe96-4824-9b20-59f5ad39eabd
   Components:
     []
+- !<ScriptComponent/dec06176-4b0f-49a7-9735-ed72db821baa>
+  PrefabRemaps:
+    []
+  Name: SmokelineDebriefUI
+  Enabled: true
+  ScriptAsset: !<reference> 8cf382ed-c7a0-4647-a7bb-57349949a8d3
+  ScriptInputsDefault:
+    buttonWidthCm: true
+    buttonHeightCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      borderMesh: !<reference.RenderMesh> b64eb2b3-fed5-40f2-a608-160a9414ed99
+      borderMaterial: !<reference.Material> 93f340cc-e155-42b8-bb0e-1eb2d82fa70a
+      buttonWidthCm: !<float> 40.000000
+      buttonHeightCm: !<float> 11.000000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/e1031f7e-3474-489f-a529-282f7192f812>
   PrefabRemaps:
     []

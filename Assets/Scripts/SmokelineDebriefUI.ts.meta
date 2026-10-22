@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/0eb365bc-f38a-43d3-9dc1-5eaca309907d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 8cf382ed-c7a0-4647-a7bb-57349949a8d3
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 8cf382ed-c7a0-4647-a7bb-57349949a8d3
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> f5ff75c4-1409-4db1-9ff4-d8d1d09b0cb9
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/f5ff75c4-1409-4db1-9ff4-d8d1d09b0cb9>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 5cac92fb-8d45-4f88-ab32-d092eae07acb
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    borderMaterial: false
+    borderMesh: false
+    buttonHeightCm: false
+    buttonWidthCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - borderMesh: !<reference.RenderMesh> 00000000-0000-0000-0000-000000000000
+      borderMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      buttonWidthCm: !<float> 40.000000
+      buttonHeightCm: !<float> 11.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SmokelineDebriefUI – floor debrief + Next drill</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input Asset.RenderMesh borderMesh {"hint":"Unit box mesh for the panel outline (SmokelineBox)"}'
+    - '// @input Asset.Material borderMaterial {"hint":"Unlit glow material for the panel outline (ExitFrameGlow)"}'
+    - '// @input float buttonWidthCm = 40 {"hint":"Next drill button width in cm", "widget":"slider", "min":15, "max":60, "step":0.5}'
+    - '// @input float buttonHeightCm = 11 {"hint":"Next drill button height in cm", "widget":"slider", "min":5, "max":20, "step":0.5}'
+    - '// @ui {"widget":"group_end"}'

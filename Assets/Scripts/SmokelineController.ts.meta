@@ -30,10 +30,12 @@
   ScriptInputsHidden:
     alarm: false
     cameraObject: false
+    debriefUi: false
     exitFrameA: false
     exitFrameB: false
     getLowCue: false
     meetingPoint: false
+    secondWayOut: false
     smokeLayer: false
     startUi: false
   ScriptTypesHidden:
@@ -46,26 +48,30 @@
     []
   DefaultScriptInputs:
     - startUi: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      debriefUi: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
       exitFrameA: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       exitFrameB: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       meetingPoint: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       smokeLayer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       alarm: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       getLowCue: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      secondWayOut: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SmokelineController – fire drill flow (criteria 1–3)</span>"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SmokelineController – fire drill flow (criteria 1–5)</span>"}'
     - '// @ui {"widget":"separator"}'
     - '// @ui {"widget":"group_start", "label":"References"}'
     - '// @input AssignableType_1 startUi {"hint":"Start drill button UI module"}'
-    - '// @input SceneObject exitFrameA {"hint":"Authored exit frame placed by the first pinch (Door A, blocked)"}'
-    - '// @input SceneObject exitFrameB {"hint":"Authored exit frame placed by the second pinch (Window B, open)"}'
+    - '// @input AssignableType_2 debriefUi {"hint":"Floor debrief panel UI module (stats + next-drill button)"}'
+    - '// @input SceneObject exitFrameA {"hint":"Authored exit frame placed by the first pinch (Door A, blocked on the first drill)"}'
+    - '// @input SceneObject exitFrameB {"hint":"Authored exit frame placed by the second pinch (Window B, open on the first drill)"}'
     - '// @input SceneObject meetingPoint {"hint":"Authored floor marker for the meeting point"}'
     - '// @input SceneObject smokeLayer {"hint":"Horizontal smoke plane; its Y is driven every frame during the drill"}'
     - '// @input Component.AudioComponent alarm {"hint":"Non-spatial alarm (temporal-3 pattern), loops during the drill"}'
     - "// @input Component.AudioComponent getLowCue {\"hint\":\"Non-spatial 'Get low' voice cue, loops while the head is above the smoke line\"}"
+    - "// @input Component.AudioComponent secondWayOut {\"hint\":\"Spatial 'Second way out' voice cue; moved to the open exit before it plays\"}"
     - "// @input SceneObject cameraObject {\"hint\":\"Camera whose world Y is the user's head height\"}"
     - '// @ui {"widget":"group_end"}'
