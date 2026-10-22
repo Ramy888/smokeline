@@ -1297,15 +1297,15 @@
   ScriptAsset: !<reference> 7664fd9f-abff-41ed-a6b7-0415a899cb46
   ScriptInputsDefault:
     label: true
-    widthCm: true
-    heightCm: true
+    hint: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       label: Start drill
-      widthCm: !<float> 18.000000
-      heightCm: !<float> 6.000000
+      widthCm: !<float> 30.000000
+      heightCm: !<float> 9.000000
+      hint: "Pinch a door, then a window. Pinch the floor for the meeting point."
       lockedOpacity: 0.500000
   ScriptTypes:
     "":

@@ -27,7 +27,7 @@ I'm walking to the door with the alarm going. The grey smoke line is dropping to
 - Heat glow: orange, on the blocked exit's frame.
 - Floor arrows: 50 × 80 cm each, on the floor, about 100 to 200 cm ahead of me, pointing to the open exit.
 - Start button: about 100 cm in front of me, a little below eye level, at least 10 cm across.
-- Debrief: a 120 × 80 cm panel lying flat on the floor in front of me at the end, within 60 to 160 cm (default).
+- Debrief: a 90 × 60 cm panel lying flat on the floor in front of me at the end, within 60 to 160 cm (default).
 - Audio: the "second way out" voice line is spatial sound from the open exit's direction. The alarm and the "get low" cue are not spatial (centred on me), so they never point anywhere. The alarm is the standard 3-beep pattern, generated, not a copyrighted sound.
 
 ## Hands and input

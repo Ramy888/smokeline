@@ -145,7 +145,7 @@ export function checkArrows(target: {x: number; z: number}, label: string): void
 const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`
 const textOf = (name: string) => (findSceneObjectByName(name).getComponent("Component.Text") as Text).text
 
-/** Debrief: shown, 120x80 cm, lying flat on the floor 60–160 cm ahead, with the given title/route and live stats. */
+/** Debrief: shown, 90x60 cm, lying flat on the floor 60–160 cm ahead, with the given title/route and live stats. */
 export function checkDebrief(title: string, route: string, label: string): void {
   const s = state()
   const cam = cameraPos()
@@ -163,8 +163,8 @@ export function checkDebrief(title: string, route: string, label: string): void 
   expect(root.enabled).toBe(true)
   near(p.y, FLOOR_Y + 2, 1.5, `${label} debrief on the floor`)
   expect(t.forward.normalize().dot(vec3.up())).toBeGreaterThan(0.99)
-  near(width, 120, 1, `${label} debrief width`)
-  near(depth, 80, 1, `${label} debrief depth`)
+  near(width, 90, 1, `${label} debrief width`)
+  near(depth, 60, 1, `${label} debrief depth`)
   expect(nearEdge >= 60 && farEdge <= 160).toBe(true)
   expect(farEdge).toBeGreaterThan(nearEdge) // the far (top) edge of the text is away from the user
   expect(lines[0]).toBe(title)

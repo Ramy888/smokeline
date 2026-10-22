@@ -24,7 +24,7 @@ const REACH_DISTANCE = 100 // cm horizontal to the open exit ends the drill (cri
 const ARROW_SIZE = new vec3(50, 80, 1) // cm, floor arrow width x length (brief)
 const ARROW_DISTANCES = [110, 190] // cm ahead of the user, arrow centres (brief: 100–200)
 const FLOOR_LIFT = 2 // cm above the floor so flat content isn't hidden by the preview room's floor
-const DEBRIEF_DISTANCE = 110 // cm ahead to the debrief centre; 80 cm deep -> spans 70–150 (brief: 60–160)
+const DEBRIEF_DISTANCE = 110 // cm ahead to the debrief centre; 60 cm deep -> spans 80–140 (brief: 60–160)
 const EDGE_ARROW_SIZE = new vec3(15, 15, 1) // cm (brief)
 const EDGE_ARROW_AHEAD = 80 // cm in front of the eyes
 const EDGE_ARROW_OFFSET = 20 // cm towards the screen edge (~14° off centre, inside the Specs view)
@@ -288,7 +288,10 @@ export class SmokelineController extends BaseScriptComponent {
     this.startTime = getTime()
     this.secondsInSmoke = 0
     this.checkedBlocked = false
-    this.exits.forEach((e) => (e.material.mainPass.baseColor = e.baseColor))
+    this.exits.forEach((e) => {
+      e.material.mainPass.baseColor = e.baseColor
+      e.obj.enabled = true
+    })
     this.arrowTarget = this.exits.find((e) => e.isBlocked) // route starts at the (unknowingly hot) door
     this.arrows.forEach((a) => (a.enabled = true))
     this.startUi.hide()
@@ -418,6 +421,7 @@ export class SmokelineController extends BaseScriptComponent {
     this.arrows.forEach((a) => (a.enabled = false))
     this.edgeArrow.enabled = this.edgeVisible = false
     this.smokeLayer.enabled = false // brief: smoke shows during the drill only
+    this.exits.forEach((e) => (e.obj.enabled = false)) // frames would cut through the floor debrief
 
     const blocked = this.exits.find((e) => e.isBlocked)
     const open = this.exits.find((e) => !e.isBlocked)

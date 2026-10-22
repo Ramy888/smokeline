@@ -6,7 +6,9 @@ import Event, {PublicApi} from "SpectaclesInteractionKit.lspkg/Utils/Event"
 
 const DISTANCE_CM = 100 // button sits ~100 cm from the starting camera (brief)
 const BUTTON_LABEL_Z = 0.08 // lift label in front of the button face
-const BUTTON_TEXT_SIZE = 48 * (DISTANCE_CM / 110) // "Headline2" role (48, Bold) scaled to distance — the only control on screen
+const BUTTON_TEXT_SIZE = 72 * (DISTANCE_CM / 110) // readable from where the user stands — the only control on screen
+const HINT_TEXT_SIZE = 48 * (DISTANCE_CM / 110)
+const HINT_GAP_CM = 4 // hint sits this far above the button
 const BUTTON_TEXT_WEIGHT = 700
 
 @component
@@ -27,6 +29,10 @@ export class SmokelineStartUI extends BaseScriptComponent {
   @hint("Button height in cm")
   @widget(new SliderWidget(4, 12, 0.5))
   heightCm: number = 6
+
+  @input
+  @hint("Instruction shown above the button while marking")
+  hint: string = "Pinch a door, then a window. Pinch the floor for the meeting point."
 
   @input
   @hint("Opacity of the button while it is locked (fewer than 2 exits marked)")
@@ -76,7 +82,19 @@ export class SmokelineStartUI extends BaseScriptComponent {
     this.labelText.horizontalOverflow = HorizontalOverflow.Overflow
     this.labelText.verticalOverflow = VerticalOverflow.Overflow
     const w = this.widthCm - 0.5
-    this.labelText.layoutRect = Rect.create(-w / 2, w / 2, -1.2, 1.2)
+    this.labelText.layoutRect = Rect.create(-w / 2, w / 2, -2, 2)
+
+    const hintObj = global.scene.createSceneObject("StartHint")
+    hintObj.setParent(this.sceneObject)
+    hintObj.getTransform().setLocalPosition(new vec3(0, this.heightCm / 2 + HINT_GAP_CM, BUTTON_LABEL_Z))
+    const hint = hintObj.createComponent("Component.Text") as Text
+    hint.text = this.hint
+    hint.size = HINT_TEXT_SIZE
+    hint.horizontalAlignment = HorizontalAlignment.Center
+    hint.horizontalOverflow = HorizontalOverflow.Wrap
+    hint.verticalOverflow = VerticalOverflow.Overflow
+    hint.layoutRect = Rect.create(-30, 30, -4, 4)
+    hint.textFill.color = new vec4(1, 1, 1, 1)
     this.applyLook()
   }
 

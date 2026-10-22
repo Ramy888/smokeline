@@ -1,18 +1,18 @@
-// SmokelineDebriefUI — owns the 120 x 80 cm debrief panel and its "Next drill" UIKit button (passive view).
+// SmokelineDebriefUI — owns the 90 x 60 cm debrief panel and its "Next drill" UIKit button (passive view).
 // Inputs: border mesh/material + size tunables. The controller positions this object flat on the floor,
 // then calls show()/hide() and subscribes to onNextDrill. Holds no drill state, makes no drill decisions.
 // Content lies in local XY facing +Z; local +Y is the far edge (the controller lays it flat).
 import {Button} from "SpectaclesUIKit.lspkg/Scripts/Components/Button/Button"
 import Event, {PublicApi} from "SpectaclesInteractionKit.lspkg/Utils/Event"
 
-const PANEL = new vec2(120, 80) // cm (brief)
+const PANEL = new vec2(90, 60) // cm (brief); ~27° wide from standing, inside the Specs view
 const BORDER = 2 // cm, light outline (additive display: no dark fill, it would be invisible)
 const TEXT_COLOR = new vec4(0.92, 0.97, 1, 1)
 const TITLE_SIZE = 230 // ~4 cm caps: read from standing height, ~1.9 m from the eyes
 const LINE_SIZE = 160
-const TITLE_Y = 27
-const LINE_YS = [13, 2, -9] // time, seconds in smoke, route
-const BUTTON_Y = -26
+const TITLE_Y = 20
+const LINE_YS = [10, 1.5, -7] // time, seconds in smoke, route
+const BUTTON_Y = -19.5
 const BUTTON_TEXT_SIZE = 130
 const LIFT = 0.5 // cm, everything sits on top of the panel plane
 

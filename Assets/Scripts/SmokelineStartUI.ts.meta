@@ -29,6 +29,7 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     heightCm: false
+    hint: false
     label: false
     lockedOpacity: false
     widthCm: false
@@ -44,6 +45,7 @@
     - label: Start drill
       widthCm: !<float> 18.000000
       heightCm: !<float> 6.000000
+      hint: "Pinch a door, then a window. Pinch the floor for the meeting point."
       lockedOpacity: 0.350000
   ScriptTypes:
     -
@@ -55,5 +57,6 @@
     - '// @input string label = "Start drill" {"hint":"Text on the Start button"}'
     - '// @input float widthCm = 18 {"hint":"Button width in cm (brief: at least 10 cm across)", "widget":"slider", "min":10, "max":40, "step":0.5}'
     - '// @input float heightCm = 6 {"hint":"Button height in cm", "widget":"slider", "min":4, "max":12, "step":0.5}'
+    - '// @input string hint = "Pinch a door, then a window. Pinch the floor for the meeting point." {"hint":"Instruction shown above the button while marking"}'
     - '// @input float lockedOpacity = 0.5 {"hint":"Opacity of the button while it is locked (fewer than 2 exits marked)", "widget":"slider", "min":0.1, "max":1, "step":0.05}'
     - '// @ui {"widget":"group_end"}'
