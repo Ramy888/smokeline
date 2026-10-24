@@ -55,3 +55,8 @@ Interactive Preview, or move the camera with the Lens Studio MCP `MovePreviewCam
 
 Only real glasses can tell: wall placement, crouching while wearing them, hand tracking, and whether the
 "second way out" voice is heard from the window's direction.
+
+## License
+
+MIT for the Smokeline code, brief and assets in this repo (see [`LICENSE`](LICENSE)). The Snap packages in
+`Packages/` (Spectacles Interaction Kit, Spectacles UI Kit, LEAF) keep their own terms from Snap.
