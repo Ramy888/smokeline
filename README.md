@@ -4,7 +4,7 @@ A home fire drill Lens for Spectacles. Your own rooms become the drill: you mark
 meeting point, press Start, and the alarm sounds while a grey smoke layer drops from the ceiling. You stay under
 it, check the door (it's hot), follow floor arrows to the second way out, and read a debrief on the floor.
 
-- Demo video (2:00, recorded in Lens Studio's Interactive Preview): https://youtu.be/etixrUzHrt4
+- Demo video (2:36: how it was planned, built and tested, then the drill recorded in Lens Studio's Interactive Preview): https://youtu.be/3exd3X9JMP0
 - Design brief, done criteria and judging notes: [`devpost/design-brief.md`](devpost/design-brief.md)
 
 ## Open it

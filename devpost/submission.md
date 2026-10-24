@@ -59,5 +59,5 @@ lens-studio, spectacles, typescript, spectacles-interaction-kit, spectacles-ui-k
 
 ## Links
 
-- Video: https://youtu.be/etixrUzHrt4
+- Video: https://youtu.be/3exd3X9JMP0
 - Code: https://github.com/Ramy888/smokeline
